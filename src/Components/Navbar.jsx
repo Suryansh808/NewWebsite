@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import { gsap } from 'gsap';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -14,6 +15,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { Link } from 'react-router-dom'
+// import { dividerClasses } from '@mui/material';
 
 const pages = [
     { name: 'What we do', path: '/what-we-do' },
@@ -22,7 +24,7 @@ const pages = [
     { name: 'Career', path: '/career' },
     { name: 'Contact us', path: '/contact-us' },
   ];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const settings = ['Profile', 'Account', '/Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -52,8 +54,14 @@ function ResponsiveAppBar() {
     );
   }, []);
 
+  const location = useLocation();
+  const noHeaderFooterRoutes = ['/DashBoard', '/login' ,'/Profile'];
+  const showHeaderFooter = !noHeaderFooterRoutes.includes(location.pathname);
+
   return (
-    <AppBar position='sticky'>
+    <>
+    {
+      showHeaderFooter && <AppBar position='sticky'>
       <Container maxWidth="xl" className="bg-black text-white">
         <Toolbar ref={headerRef} disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -182,6 +190,8 @@ function ResponsiveAppBar() {
         </Toolbar>
       </Container>
     </AppBar>
+    }
+    </>
   );
 }
 export default ResponsiveAppBar;
