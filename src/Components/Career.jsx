@@ -15,9 +15,9 @@ const Career = () => {
               <div className='w-full h-full absolute top-0 bg-gradient-to-l from-[#00000063] to-[#141414cf]'>
                 <div className='w-full flex flex-col px-[15vw] mt-[10vh] max-[600px]:mt-0   text-white '>
                   <h1 className='text-[2.5rem] max-[600px]:text-[1.5rem] font-medium'>Career</h1>
-                  <hr className='w-[70vw]' />
+                  <hr className='w-[70vw]'/>
                   <h2 className='pt-5 text-[2rem] max-[600px]:text-[1.5rem] max-[600px]:tracking-tight max-[600px]:leading-tight'>Empower your passion, Elevate your career.</h2>
-                   <Link to='/Login' target='_blank' className='mt-10 max-[600px]:mt-5 text-xl font-semibold flex items-center gap-3'>Apply now <BsArrowRightCircle className='text-2xl'/></Link>
+                   <Link to='/StudentSignup' className='mt-10 max-[600px]:mt-5 text-xl font-semibold flex items-center gap-3'>Apply now <BsArrowRightCircle className='text-2xl'/></Link>
                 </div>
               </div>
       </div>

@@ -15,6 +15,12 @@ import FooterWithSocialLinks from "./Components/Footer";
 import Login from "./Components/Login";
 import DashBoard from "./layouts/DashBoard";
 import Profile from "./layouts/Profile";
+import Overview from './Components/Products/Overview';
+
+import StudentSignup from './pages/StudentSignup';
+import StudentVerify from './pages/StudentVerify';
+import StudentProfile from './pages/StudentProfile';
+import ProtectedRoute from './Components/ProtectedRoute';
 
 const App = () => {
   
@@ -34,10 +40,14 @@ const App = () => {
           <Route index path="/login" element={<Login/>} />
           <Route index path="/DashBoard" element={<DashBoard/>}/>
           <Route path="/Profile" element={<Profile/>}/>
-          {/* <Route path="/Profile" element={</>}/> */}
-
-          {/* <Route index path="/CareerPortal" element={<CareerPortal/>} /> */}
-         {/* <Route path="/CareerPortal" element={<CareerPortalLayout><CareerPortal/></CareerPortalLayout>} /> */}
+          <Route path="/Overview" element={<Overview/>}/>
+          <Route path="/StudentSignup" element={<StudentSignup/>} />
+        <Route path="/StudentVerify" element={<StudentVerify />} />
+        <Route path="/StudentProfile" element={
+          <ProtectedRoute>
+            <StudentProfile />
+          </ProtectedRoute>
+        } />
         </Routes>
         <FooterWithSocialLinks/>
       </HashRouter>

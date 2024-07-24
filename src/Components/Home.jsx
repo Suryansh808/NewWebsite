@@ -42,7 +42,7 @@ const Home = () => {
       autoplay
       loop={true}
       pagination={{ clickable: true }}
-      className='w-full max-[600px]:h-[35vh]'>
+      className='w-full h-[90vh] max-[600px]:h-[35vh]'>
       <SwiperSlide ><img className='w-full h-full bg-cover bg-center' src={Image1}/></SwiperSlide>
       <SwiperSlide ><img className='w-full h-full bg-cover bg-center' src={Image2}/></SwiperSlide>
       <SwiperSlide ><img className='w-full h-full bg-cover bg-center' src={Image3}/></SwiperSlide>

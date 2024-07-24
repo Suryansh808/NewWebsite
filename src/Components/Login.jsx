@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import {Link} from 'react-router-dom';
 // import axios from 'axios';
 import { sendOtp, verifyOtp } from '../Api/auth';
+import { TbArrowBackUpDouble } from "react-icons/tb";
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -44,7 +46,9 @@ const Login = () => {
 
   return (
     <>
-     <div class="flex items-center min-h-screen p-4 bg-gray-100 lg:justify-center">
+      
+     <div class="flex items-center relative min-h-screen p-4 bg-gray-100 lg:justify-center">
+        <Link to='/' className='absolute top-2 right-5 p-2 bg-black text-white rounded-full'><TbArrowBackUpDouble  className='text-3xl'/></Link>
       <div
         class="flex flex-col overflow-hidden bg-white rounded-md shadow-lg max md:flex-row md:flex-1 lg:max-w-screen-md"
       >

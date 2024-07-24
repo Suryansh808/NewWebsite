@@ -18,6 +18,7 @@ import { Link } from 'react-router-dom'
 // import { dividerClasses } from '@mui/material';
 
 const pages = [
+    { name: 'Home', path: '/' },
     { name: 'What we do', path: '/what-we-do' },
     { name: 'Who we are', path: '/who-we-are' },
     { name: 'Insights', path: '/insights' },
@@ -55,7 +56,7 @@ function ResponsiveAppBar() {
   }, []);
 
   const location = useLocation();
-  const noHeaderFooterRoutes = ['/DashBoard', '/login' ,'/Profile'];
+  const noHeaderFooterRoutes = ['/DashBoard', '/Login' ,'/Profile'];
   const showHeaderFooter = !noHeaderFooterRoutes.includes(location.pathname);
 
   return (
